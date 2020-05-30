@@ -4,26 +4,53 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+const routes: Array<RouteConfig> = [
+    {
+        path: '/',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/article/:id',
+        name: 'Article',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Article.vue')
+    },
+    {
+        path: '/author/:id',
+        name: 'Author',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Author.vue')
+    },
+    {
+        path: '/category/:id',
+        name: 'Category',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Category.vue')
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    },
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+    }, {
+        path: '/edit-article/:id',
+        name: 'EditArticle',
+        component: () => import(/* webpackChunkName: "about" */ '../views/EditArticle.vue')
+    },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+})
+
+router.beforeEach((to, from, next) => {
+    const isAuthenticated = localStorage.getItem("__isLoggedIn") === "true";
+    if ((to.name === 'Dashboard' || to.name === 'EditArticle') && !isAuthenticated) next({ name: 'Login' })
+    else next()
 })
 
 export default router
