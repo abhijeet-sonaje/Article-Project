@@ -32,24 +32,24 @@
         :key="item.id"
       >
         <b-card-img v-bind:src="item.picture" width="360px" height="223px" alt="Image" img-top></b-card-img>
-        <router-link v-bind:to="`/article/${item.id}`">
-          <b-card-body>
+        <b-card-body>
+          <router-link v-bind:to="`/article/${item.id}`">
             <b-card-title class="title">{{item.title }}</b-card-title>
-            <b-card-text class="category text-center">{{ item.category }}</b-card-text>
-            <b-card-text class="text-muted text-truncate">{{ item.desc }}</b-card-text>
-            <blockquote class="text-muted">
-              <b-img
-                v-bind:src="item.authorPicture"
-                width="30px"
-                height="30px"
-                class="m1"
-                rounded="circle"
-                alt="Circle image"
-              ></b-img>
-              By {{ item.author }}
-            </blockquote>
-          </b-card-body>
-        </router-link>
+          </router-link>
+          <b-card-text class="category text-center">{{ item.category }}</b-card-text>
+          <b-card-text class="text-muted text-truncate">{{ item.desc }}</b-card-text>
+          <blockquote class="text-muted">
+            <b-img
+              v-bind:src="item.authorPicture"
+              width="30px"
+              height="30px"
+              class="m1"
+              rounded="circle"
+              alt="Circle image"
+            ></b-img>
+            By {{ item.author }}
+          </blockquote>
+        </b-card-body>
       </b-card>
     </div>
   </div>
