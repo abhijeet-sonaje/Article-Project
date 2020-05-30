@@ -1,4 +1,4 @@
-# article-project
+# Article Project
 
 # Demo
 Netlify [Link](https://article-project.netlify.app)
