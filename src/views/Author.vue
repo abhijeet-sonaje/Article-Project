@@ -25,15 +25,13 @@
     <div>
       <b-card
         no-body
-        v-bind:img-src="item.picture"
-        img-alt="Image"
-        img-top
         tag="article"
         style="max-width: 20rem;"
         class="mb-4 mr-4"
         v-for="item in articles"
         :key="item.id"
       >
+        <b-card-img v-bind:src="item.picture" width="360px" height="223px" alt="Image" img-top></b-card-img>
         <router-link v-bind:to="`/article/${item.id}`">
           <b-card-body>
             <b-card-title class="title">{{item.title }}</b-card-title>

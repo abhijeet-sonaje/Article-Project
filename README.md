@@ -1,21 +1,24 @@
 # article-project
 
+# Demo
+Netlify [Link](https://article-project.netlify.app)
+
 ## Problem Statement
 Create an article management module where user can create/update an article. We will be using Vue.js for this project. You can think of it as something similar to twitter. You should be able to view articles by other users.
 
 ## Articles have following properties
-• Title
-• Image and/or video
-• Description
-• Publish date
-• Article text
-• Anything else you deem necessary
+* Title
+* Image and/or video
+* Description
+* Publish date
+* Article text
+* Anything else you deem necessary
 
 ## Features
-• Sorting, filtering based on time, title, number of likes(popularity)
-• LIke and keep track of likes for each article
-• Different image sizes handled
-• Anything else you deem necessary
+* Sorting, filtering based on time, title, number of likes(popularity)
+* LIke and keep track of likes for each article
+* Different image sizes handled
+* Anything else you deem necessary
 
 ## Project setup
 ```
