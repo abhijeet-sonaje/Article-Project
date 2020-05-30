@@ -3,6 +3,10 @@
 # Demo
 Netlify [Link](https://article-project.netlify.app)
 
+### Demo Login Credentials
+* email - admin@articleproject.com
+* password - asdf1234
+
 ## Problem Statement
 Create an article management module where user can create/update an article. We will be using Vue.js for this project. You can think of it as something similar to twitter. You should be able to view articles by other users.
 
